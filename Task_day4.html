@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var req=new XMLHttpRequest();
+        req.open('GET','https://restcountries.com/v3.1/all');
+        req.send()
+        req.onload=function(){
+            var data=req.response
+            console.log(JSON.parse(data))
+            var resp=JSON.parse(data)
+            //for in loop
+            for(var b in resp){
+                console.log(resp[b].name,resp[b].population,resp[b].region,resp[b].subregion);
+            }
+            //for of loop
+            for (var x in resp){
+                console.log(resp[x].flag);
+            }
+        }
+    </script>
+</body>
+</html>

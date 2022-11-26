@@ -1,0 +1,23 @@
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+
+var obj1={name:"Person1",age:5};
+var obj2={age:5,name:"Person1"};
+
+console.log(JSON.stringify(obj1)==JSON.stringify(obj2));
+
+
+});
